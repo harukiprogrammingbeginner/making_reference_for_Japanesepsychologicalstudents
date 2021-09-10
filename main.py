@@ -8,6 +8,7 @@ from selenium import webdriver
 book_title = st.text_input("引用したい翻訳本のタイトルを入力してください")
 if "" != book_title:
     get_driver = GetChromeDriver()
+    sleep(3)
     get_driver.install()
     def driver_init():
         options = webdriver.ChromeOptions()
