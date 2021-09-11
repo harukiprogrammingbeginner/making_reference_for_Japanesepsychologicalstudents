@@ -48,11 +48,12 @@ if "" != book_title:
         title_split = title.split(" : ")
         main_title = title_split[0]
         sub_title = title_split[1]
+        # サブタイトルの後ろスペースを消す。
+        sub_title = sub_title.replace(" ", "")
     else:
         main_title = title
 
-    # サブタイトルの後ろスペースを消す。
-    sub_title = sub_title.replace(" ", "")
+    
     # 著者名
     names = title_names[1]
     # 著者名を外国人と日本人に分ける。
