@@ -18,7 +18,7 @@ if "" != book_title:
     elem_input.send_keys(book_title)
     elem_button = browser.find_elements_by_tag_name("button")[2]
     elem_button.click()
-    sleep(10)
+    sleep(5)
     url_searched = browser.current_url
 
     res = requests.get(url_searched)
@@ -150,7 +150,7 @@ if "" != book_title:
     #検索
     elem_button = browser.find_element_by_id('edit-submit')
     elem_button.click()
-    sleep(30)
+    sleep(15)
 
     #年と出版地、出版社取得
     results = browser.find_elements_by_class_name("result")[0:3]
