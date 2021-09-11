@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.Chrome import ChromeDriverManager 
 
 book_title = st.text_input("引用したい翻訳本のタイトルを入力してください")
 if "" != book_title:
     options = Options()
     options.add_argument("--headless")
-    browser = webdriver.Chrome(chromedriver.exe, options=options)
+    browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     #立命図書館にアクセス
     url_ritsumei = "https://runners.ritsumei.ac.jp/opac/opac_search/?lang=0"
     browser.get(url_ritsumei)
