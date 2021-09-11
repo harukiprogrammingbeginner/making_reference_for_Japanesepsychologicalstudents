@@ -163,7 +163,7 @@ if "" != book_title:
         name_publisher1 = result.find_elements_by_tag_name("div")
         name_publisher1_text = name_publisher1[2].text
         name_publisher1_text_split = name_publisher1_text.split(" : ")
-        year = name_publisher1_text_split[1].split(", ")[-1].strip("©c[]").replace(".", "")
+        year = name_publisher1_text_split[1].split(", ")[-1].strip("©c[]").strip(".")
         year_int = int(year)
         if year_int <= year_j:
             years.append(year)
