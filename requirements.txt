@@ -1,3 +1,4 @@
 selenium==3.141.0
 streamlit==0.88.0
 bs4
+webdriver_manager
