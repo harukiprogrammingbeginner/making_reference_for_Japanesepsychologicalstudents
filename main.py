@@ -2,19 +2,14 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
-from get_chrome_driver import GetChromeDriver
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 book_title = st.text_input("引用したい翻訳本のタイトルを入力してください")
 if "" != book_title:
-    get_driver = GetChromeDriver()
-    sleep(3)
-    get_driver.install()
-    def driver_init():
-        options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        return webdriver.Chrome(options=options)
-    browser = driver_init()
+    options = Options()
+    options.add_argument("--headless")
+    browser = webdriver.Chrome(chromedriver.exe, options=options)
     #立命図書館にアクセス
     url_ritsumei = "https://runners.ritsumei.ac.jp/opac/opac_search/?lang=0"
     browser.get(url_ritsumei)
