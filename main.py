@@ -35,7 +35,7 @@ if "" != book_title:
     soup2 = BeautifulSoup(res2.text, "html.parser")
     publisher_year = soup2.find_all("span", attrs={"class": "more"})
     title_foreign = publisher_year[3]
-    title_foreign_complete = title_foreign.text.split("異")[0].strip("原タイトル:")
+    title_foreign_complete = title_foreign.text.split("異")[0].split("原タイトル:")[-1]
     # タイトルと著者の名前の取得(詳細ページに飛ぶ前で)
     title_names = tag_a.text
     title_names = tag_a.text.replace("\n", "")
