@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.Chrome import ChromeDriverManager 
+from webdriver_manager.chrome import ChromeDriverManager 
 
 book_title = st.text_input("引用したい翻訳本のタイトルを入力してください")
 if "" != book_title:
